@@ -1,0 +1,324 @@
+/**
+ * Dark Mode Styles
+ * Provides dark theme for the entire application
+ */
+
+/* Dark mode root variables */
+.dark-mode {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-tertiary: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #b0b0b0;
+    --border-color: #404040;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Base dark mode styles */
+.dark-mode body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.dark-mode .bg-white {
+    background-color: var(--bg-secondary) !important;
+}
+
+.dark-mode .bg-gray-50 {
+    background-color: var(--bg-primary) !important;
+}
+
+.dark-mode .bg-gray-100 {
+    background-color: var(--bg-tertiary) !important;
+}
+
+.dark-mode .bg-gray-200 {
+    background-color: #4a4a4a !important;
+}
+
+/* Text colors */
+.dark-mode .text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode .text-gray-800 {
+    color: var(--text-secondary) !important;
+}
+
+.dark-mode .text-gray-700 {
+    color: var(--text-secondary) !important;
+}
+
+.dark-mode .text-gray-600 {
+    color: var(--text-tertiary) !important;
+}
+
+.dark-mode .text-gray-500 {
+    color: var(--text-tertiary) !important;
+}
+
+/* Borders */
+.dark-mode .border,
+.dark-mode .border-gray-200,
+.dark-mode .border-gray-300 {
+    border-color: var(--border-color) !important;
+}
+
+/* Cards and containers */
+.dark-mode .shadow,
+.dark-mode .shadow-sm,
+.dark-mode .shadow-md,
+.dark-mode .shadow-lg {
+    box-shadow: 0 4px 6px var(--shadow) !important;
+}
+
+/* Forms */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: var(--text-tertiary) !important;
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+    background-color: var(--bg-secondary) !important;
+    border-color: #f59e0b !important;
+}
+
+/* Buttons - keep primary colors vibrant */
+.dark-mode .bg-amber-600,
+.dark-mode .bg-amber-700 {
+    /* Keep amber colors as is for contrast */
+}
+
+.dark-mode .bg-blue-600,
+.dark-mode .bg-green-600,
+.dark-mode .bg-red-600,
+.dark-mode .bg-purple-600 {
+    /* Keep primary button colors vibrant */
+}
+
+/* Tables */
+.dark-mode table {
+    color: var(--text-primary);
+}
+
+.dark-mode thead {
+    background-color: var(--bg-tertiary) !important;
+}
+
+.dark-mode tbody tr {
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode tbody tr:hover {
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* Navigation */
+.dark-mode nav {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .sidebar {
+    /* Keep sidebar gradient as is */
+}
+
+/* Product cards */
+.dark-mode .product-card {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .product-card:hover {
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* Modals */
+.dark-mode .modal-content {
+    background-color: var(--bg-secondary) !important;
+}
+
+.dark-mode .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Dropdowns */
+.dark-mode .dropdown-menu {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: var(--bg-tertiary) !important;
+}
+
+/* Badges and tags */
+.dark-mode .badge,
+.dark-mode .tag {
+    background-color: var(--bg-tertiary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Keep status badges colorful */
+.dark-mode .bg-green-100,
+.dark-mode .bg-red-100,
+.dark-mode .bg-blue-100,
+.dark-mode .bg-amber-100,
+.dark-mode .bg-purple-100 {
+    /* Keep status colors visible */
+    opacity: 0.9;
+}
+
+/* Alerts */
+.dark-mode .alert {
+    background-color: var(--bg-tertiary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Footer */
+.dark-mode footer {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Images - add subtle border in dark mode */
+.dark-mode img {
+    border-radius: 8px;
+}
+
+/* Links */
+.dark-mode a:not(.btn):not(.button) {
+    color: #fbbf24;
+}
+
+.dark-mode a:not(.btn):not(.button):hover {
+    color: #f59e0b;
+}
+
+/* Scrollbar for dark mode */
+.dark-mode ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4a4a4a, #3a3a3a);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5a5a5a, #4a4a4a);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Icon rotation animation */
+.dark-mode-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover i {
+    transform: rotate(20deg);
+}
+
+/* Smooth transition for dark mode */
+body,
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+input,
+textarea,
+select,
+.product-card,
+nav,
+footer {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Special handling for gradients */
+.dark-mode .bg-gradient-to-r {
+    opacity: 0.9;
+}
+
+/* Code blocks in dark mode */
+.dark-mode code,
+.dark-mode pre {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+}
+
+/* Loading spinner in dark mode */
+.dark-mode .loading-spinner {
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #f59e0b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .dark-mode-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+/* Print styles - force light mode */
+@media print {
+    .dark-mode {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .dark-mode * {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .dark-mode-toggle {
+        display: none !important;
+    }
+}
+
+/* Accessibility - respect user preferences */
+@media (prefers-color-scheme: dark) {
+    /* Auto dark mode can be enabled here if desired */
+}

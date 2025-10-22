@@ -1,0 +1,247 @@
+/**
+ * Loading Skeleton Styles
+ * Provides visual placeholders while content is loading
+ */
+
+/* Base skeleton styles */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Dark mode skeleton */
+.dark-mode .skeleton {
+    background: linear-gradient(90deg, #2a2a2a 25%, #1a1a1a 50%, #2a2a2a 75%);
+    background-size: 200% 100%;
+}
+
+/* Product card skeleton */
+.skeleton-product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 12px;
+}
+
+.skeleton-title {
+    width: 80%;
+    height: 20px;
+    margin-bottom: 8px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 14px;
+    margin-bottom: 6px;
+}
+
+.skeleton-text-short {
+    width: 60%;
+    height: 14px;
+    margin-bottom: 6px;
+}
+
+.skeleton-price {
+    width: 40%;
+    height: 24px;
+    margin-top: 12px;
+}
+
+.skeleton-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 12px;
+}
+
+/* Product grid skeleton */
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Table row skeleton */
+.skeleton-table-row {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.skeleton-table-cell {
+    height: 20px;
+    flex: 1;
+}
+
+/* Dashboard card skeleton */
+.skeleton-dashboard-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-stat-value {
+    width: 60%;
+    height: 32px;
+    margin-bottom: 8px;
+}
+
+.skeleton-stat-label {
+    width: 40%;
+    height: 16px;
+}
+
+/* User avatar skeleton */
+.skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.skeleton-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Order item skeleton */
+.skeleton-order-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.skeleton-order-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.skeleton-order-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Category card skeleton */
+.skeleton-category-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skeleton-category-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+}
+
+.skeleton-category-name {
+    width: 70%;
+    height: 18px;
+    margin: 0 auto;
+}
+
+/* Shimmer effect variant */
+.skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #f6f7f8;
+}
+
+.skeleton-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pulse effect variant */
+.skeleton-pulse {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Hide content while loading */
+.loading-content {
+    display: none;
+}
+
+.skeleton-wrapper.loaded .skeleton {
+    display: none;
+}
+
+.skeleton-wrapper.loaded .loading-content {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .skeleton-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skeleton-image {
+        height: 150px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .skeleton,
+    .skeleton-shimmer::after,
+    .skeleton-pulse {
+        animation: none;
+    }
+}
